@@ -89,6 +89,7 @@ map <F5> :!ctags -R<CR>
 " Leaderf setting
 " \rg 查找光标所在word出现的地方, .gitignore文件里的不会搜索 
 "nnoremap <silent> <Leader>rg :Leaderf rg <C-R><C-W><CR>
+nnoremap <Leader>rf :Leaderf rg<Space> 
 nnoremap <silent> <Leader>rg :exe 'Leaderf rg ' . expand('<cword>')<CR>
 nnoremap <C-f> :Leaderf rg <C-R><C-W><CR>
 
@@ -111,15 +112,7 @@ nnoremap <Space> <PageDown>
 " nnoremap <C-f> :Ack<CR>
 
 " clangd coc自动补全按回车选择
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 colorscheme darcula
 
-nnoremap <silent> K :call ShowDocumentation()<CR>
-" Show hover when provider exists, fallback to vim's builtin behavior.
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('definitionHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
+source ~/.config/nvim/coc.vim 
