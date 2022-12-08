@@ -103,10 +103,14 @@ nnoremap <silent> <Leader>b :Leaderf buffer<CR>
 " 直接在你要查的word上按;键就行
 " 关闭Preview窗口, 执行:pc
 nnoremap <silent> ; :ptag <C-R>=expand("<cword>")<CR><CR>
+nnoremap <silent> ' :pc<CR>
 " Tab键切换buffer
 nnoremap <Tab> :bNext<CR>
 " space空格翻页
 nnoremap <Space> <PageDown>
+" source neovim config file without restarting nvim/vim
+" 2021 update: If you are using neovim with a lua config, you can use :luafile $MYVIMRC
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " Ack 查找光标所在word出现的地方
 " nnoremap <C-f> :Ack<CR>
