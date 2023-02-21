@@ -19,6 +19,9 @@ set tags=tags;  " 在父目录中递归查找tags文件
 "set tags+=~/.vim/systags
 set tags+=~/.vim/cpp_tags
 
+" sh -c 'curl -kfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+" start nvim, then :PlugInstall
 call plug#begin('~/.vim/plugged')
 
 "Plug 'Tagbar'
