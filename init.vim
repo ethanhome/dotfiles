@@ -4,6 +4,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set nu
+set hlsearch  " 高亮搜索匹配  
+set incsearch " 开启实时搜索功能
+set cursorline "高亮显示当前行 
 " colorscheme desert
 colorscheme default
 
@@ -51,6 +54,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 支持c/c++ STL即标准库关键字高亮
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+" https://github.com/ojroques/vim-oscyank
+" https://github.com/Eugeny/tabby/issues/7266
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'ethanhome/darcula'
 
@@ -92,7 +99,8 @@ map <F5> :!ctags -R<CR>
 nnoremap <Leader>rf :Leaderf rg<Space> 
 nnoremap <silent> <Leader>rg :exe 'Leaderf rg ' . expand('<cword>')<CR>
 nnoremap <C-f> :Leaderf rg <C-R><C-W><CR>
-
+" 上次搜索结果
+noremap go :<C-U>Leaderf! rg --recall<CR>
 " 文件模糊搜索
 nnoremap <silent> <Leader>f :Leaderf file<CR>
 nnoremap <silent> <Leader>m :Leaderf mru<CR>
@@ -116,7 +124,10 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 " nnoremap <C-f> :Ack<CR>
 
 " clangd coc自动补全按回车选择
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-colorscheme darcula
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-source ~/.config/nvim/coc.vim 
+vnoremap <leader>c :OSCYank<CR>
+
+"colorscheme darcula
+
+"source ~/.config/nvim/coc.vim 
