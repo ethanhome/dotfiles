@@ -10,6 +10,10 @@ set cursorline "高亮显示当前行
 " colorscheme desert
 colorscheme default
 
+" map <Space> as leader
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 set foldenable " 打开折叠方式
 set foldmethod=syntax " syntax:按c/c++语法折叠{}; indent: 按缩进折叠，适用于python
 set foldlevelstart=99 " 打开文件时不自动折叠， zc: 折叠代码， zo: 打开折叠的代码
@@ -99,11 +103,11 @@ map <F5> :!ctags -R<CR>
 " Leaderf setting
 " \rg 查找光标所在word出现的地方, .gitignore文件里的不会搜索 
 "nnoremap <silent> <Leader>rg :Leaderf rg <C-R><C-W><CR>
-nnoremap <Leader>rf :Leaderf rg<Space> 
-nnoremap <silent> <Leader>rg :exe 'Leaderf rg ' . expand('<cword>')<CR>
+nnoremap <Leader>fw :Leaderf rg -w <Space> 
+nnoremap <silent> <Leader>fs :exe 'Leaderf rg ' . expand('<cword>')<CR>
 nnoremap <C-f> :Leaderf rg <C-R><C-W><CR>
 " 上次搜索结果
-noremap go :<C-U>Leaderf! rg --recall<CR>
+noremap <Leader>fr :<C-U>Leaderf! rg --recall<CR>
 " 文件模糊搜索
 nnoremap <silent> <Leader>f :Leaderf file<CR>
 nnoremap <silent> <Leader>m :Leaderf mru<CR>
@@ -117,8 +121,9 @@ nnoremap <silent> ; :ptag <C-R>=expand("<cword>")<CR><CR>
 nnoremap <silent> ' :pc<CR>
 " Tab键切换buffer
 nnoremap <Tab> :bNext<CR>
-" space空格翻页
-nnoremap <Space> <PageDown>
+" 翻页
+nnoremap <Leader>j <PageDown>
+nnoremap <Leader>k <PageUp>
 " source neovim config file without restarting nvim/vim
 " 2021 update: If you are using neovim with a lua config, you can use :luafile $MYVIMRC
 nnoremap <Leader>sv :source $MYVIMRC<CR>
