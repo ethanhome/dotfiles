@@ -6,9 +6,12 @@ set softtabstop=4
 set nu
 set hlsearch  " 高亮搜索匹配  
 set incsearch " 开启实时搜索功能
-set cursorline "高亮显示当前行 
+
 " colorscheme desert
 colorscheme default
+set cursorline "高亮显示当前行 
+"当前行不需要显示下划线
+hi CursorLine cterm=none 
 
 " map <Space> as leader
 nnoremap <SPACE> <Nop>
@@ -104,7 +107,7 @@ map <F5> :!ctags -R<CR>
 " \rg 查找光标所在word出现的地方, .gitignore文件里的不会搜索 
 "nnoremap <silent> <Leader>rg :Leaderf rg <C-R><C-W><CR>
 nnoremap <Leader>fw :Leaderf rg -w <Space> 
-nnoremap <silent> <Leader>fs :exe 'Leaderf rg ' . expand('<cword>')<CR>
+nnoremap <silent> <Leader>fs :exe 'Leaderf rg -w ' . expand('<cword>')<CR>
 nnoremap <C-f> :Leaderf rg <C-R><C-W><CR>
 " 上次搜索结果
 noremap <Leader>fr :<C-U>Leaderf! rg --recall<CR>
