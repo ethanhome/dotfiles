@@ -34,9 +34,9 @@ call plug#begin('~/.vim/plugged')
 "Plug 'Tagbar'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 " sudo apt-get install ack-grep
-Plug 'mileszs/ack.vim'
+"Plug 'mileszs/ack.vim'
 
 " Leaderf rg, sudo apt install -y ripgrep
 " or curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
@@ -69,7 +69,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'ethanhome/darcula'
+"Plug 'ethanhome/darcula'
 
 call plug#end()
 
