@@ -106,13 +106,13 @@ map <F5> :!ctags -R<CR>
 " Leaderf setting
 " \rg 查找光标所在word出现的地方, .gitignore文件里的不会搜索 
 "nnoremap <silent> <Leader>rg :Leaderf rg <C-R><C-W><CR>
-nnoremap <Leader>fw :Leaderf rg -w <Space> 
-nnoremap <silent> <Leader>fs :exe 'Leaderf rg -w ' . expand('<cword>')<CR>
-nnoremap <C-f> :Leaderf rg <C-R><C-W><CR>
+nnoremap <Leader>fw :Leaderf rg --regexMode -w <Space> 
+nnoremap <silent> <Leader>fs :exe 'Leaderf rg --regexMode -w ' . expand('<cword>')<CR>
+nnoremap <C-f> :Leaderf rg --regexMode <C-R><C-W><CR>
 " 上次搜索结果
-noremap <Leader>fr :<C-U>Leaderf! rg --recall<CR>
+noremap <Leader>fr :<C-U>Leaderf! rg --regexMode --recall<CR>
 " 文件模糊搜索
-nnoremap <silent> <Leader>f :Leaderf file<CR>
+nnoremap <silent> <Leader>ff :Leaderf file<CR>
 nnoremap <silent> <Leader>m :Leaderf mru<CR>
 nnoremap <silent> <Leader>b :Leaderf buffer<CR>
 
