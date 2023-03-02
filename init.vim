@@ -11,7 +11,7 @@ set incsearch " 开启实时搜索功能
 colorscheme default
 set cursorline "高亮显示当前行 
 "当前行不需要显示下划线
-hi CursorLine cterm=none 
+hi CursorLine cterm=bold
 
 " map <Space> as leader
 nnoremap <SPACE> <Nop>
