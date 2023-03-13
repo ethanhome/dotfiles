@@ -34,7 +34,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'Tagbar'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " sudo apt-get install ack-grep
 "Plug 'mileszs/ack.vim'
 
